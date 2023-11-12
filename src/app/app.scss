@@ -1,0 +1,43 @@
+:root {
+  --fancyBg: linear-gradient(#e66465, #9198e5);
+  --softBg: #f0f0f0;
+  --darkBg: #0a0a0a;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM", sans-serif;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: var(--softBg);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+.fancy {
+  background-color: var(--softBg);
+}
+
+.soft {
+  background-color: var(--fancyBg);
+}
+
+.dark {
+  background-color: var(--darkBg);
+}
