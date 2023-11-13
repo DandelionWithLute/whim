@@ -4,6 +4,7 @@ import { FaFreeCodeCamp } from "react-icons/fa";
 import { BiLogoPython, BiLogoTiktok } from "react-icons/bi";
 import { SiTencentqq } from "react-icons/si";
 import { AiFillWechat } from "react-icons/ai";
+import { LogButton } from "../logButton/LogButton";
 
 const Navbar = () => {
   return (
@@ -42,8 +43,8 @@ const Navbar = () => {
         <a href="#" className="icon">
           <BiLogoTiktok />
         </a>
-        <a href="#" className="link log">
-          Login
+        <a className="link log">
+          <LogButton />
         </a>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import App from "./App";
+import AuthProvider from "@/providers/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,11 @@ export default function RootLayout() {
       <head>
         <link rel="icon" type="image/svg" href="/home.svg" sizes="any" />
       </head>
-      <body className={inter.className}><App /></body>
+      <body className={inter.className}>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </body>
     </html>
   );
 }
