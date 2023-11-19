@@ -4,6 +4,11 @@ https://authjs.dev/reference/adapter/mongodb
 https://authjs.dev/reference/adapter/prisma#mongodb-support
 https://www.prisma.io/docs/concepts/database-connectors/mongodb
 
+? optional chaining
+
+
+
+
 install next-auth instead of next-auth/react
 since next-auth/react is another package
 
