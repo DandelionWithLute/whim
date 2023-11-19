@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import "./logButton.scss";
 import { useSession, signIn, signOut } from "next-auth/react";
 
@@ -7,15 +7,15 @@ export const LogButton = () => {
   if (session) {
     return (
       <>
-        Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Logout</button>
+        <button onClick={() => signOut()} className="io">
+          Signed in as {session.user.email} <br />
+        </button>
       </>
     );
   }
   return (
     <>
-      Not signed in 
-      <button onClick={() => signIn()}>Login</button>
+      <button onClick={() => signIn()} className="io">Not signed in </button>
     </>
   );
 };
