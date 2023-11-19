@@ -1,10 +1,25 @@
-export const authOptions = () => {
+import GoogleProvider from "next-auth/providers/google";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+const authOptions = {
+  adapter: PrismaAdapter(prisma),
   // Configure one or more authentication providers
   providers: [
-    GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
-    }),
     // ...add more providers here
-  ];
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      profile(profile) {
+        return {
+          // Return all the profile information you need.
+          // The only truly required field is `id`
+          // to be able identify the account when added to a database
+        };
+      },
+    }),
+  ],
 };
+export default authOptions;

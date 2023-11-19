@@ -1,3 +1,9 @@
+https://authjs.dev/guides/adapters/creating-a-database-adapter
+https://authjs.dev/reference/adapter/prisma
+https://authjs.dev/reference/adapter/mongodb
+https://authjs.dev/reference/adapter/prisma#mongodb-support
+https://www.prisma.io/docs/concepts/database-connectors/mongodb
+
 install next-auth instead of next-auth/react
 since next-auth/react is another package
 
