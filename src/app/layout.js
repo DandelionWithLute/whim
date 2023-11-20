@@ -20,10 +20,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className={inter.className}>
         <AuthProvider>
-          <App />
           <Navbar />
-          {children}
-          {/* <Footer /> */}
+          {/* <App /> */}
+          {/* {children} */}
+          <Footer />
         </AuthProvider>
       </body>
     </html>

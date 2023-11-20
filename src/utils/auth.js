@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth";
 
 const prisma = new PrismaClient();
 
-const authOptions = {
+export const authOptions = {
   adapter: PrismaAdapter(prisma),
   // Configure one or more authentication providers
   providers: [
@@ -23,6 +23,6 @@ const authOptions = {
     }),
   ],
 };
-export default authOptions;
+
 
 export const getAuthSession = getServerSession();

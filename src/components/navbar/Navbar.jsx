@@ -43,7 +43,7 @@ const Navbar = () => {
         <a href="#" className="icon">
           <BiLogoTiktok />
         </a>
-        <a className="link log">
+        <a className="log">
           <LogButton />
         </a>
       </div>
