@@ -14,6 +14,7 @@ const LoginPage = () => {
 
   if (status === "authenticated") {
     router.push("/");
+    console.log("You are Authenticated!")
   }
 
   return (
