@@ -6,6 +6,19 @@ https://www.prisma.io/docs/concepts/database-connectors/mongodb
 
 ? optional chaining
 
+import { NextResponse } from "next/server";
+
+stale-while-revalidate重新验证时失效
+
+How are parameters sent in an HTTP POST request?
+Jan 27, 2013 — Short answer: in POST requests, values are sent in the "body" of the request. With web-forms they are most likely sent with a media type of ...
+https://stackoverflow.com/questions/14551194/how-are-parameters-sent-in-an-http-post-request
+
+{params} comes from [ slug ]/route.js folder
+it is also the name of url child object
+
+Dynamic Routes are pages that allow you to add custom params to your URLs. Start creating Dynamic Routes and learn more here ... { slug: ['a', 'b', 'c'] }. Next ...
+
 
 
 
