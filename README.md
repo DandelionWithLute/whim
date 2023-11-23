@@ -19,6 +19,7 @@ it is also the name of url child object
 
 Dynamic Routes are pages that allow you to add custom params to your URLs. Start creating Dynamic Routes and learn more here ... { slug: ['a', 'b', 'c'] }. Next ...
 
+where:{cat,{catSlug:cat}} It's opposite to prisma model!
 
 
 
