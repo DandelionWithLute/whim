@@ -1,0 +1,88 @@
+:root {
+  --fancyBg: linear-gradient(#e66465, #9198e5);
+  --softBg: #f0f0f0;
+  --darkBg: #0a0a0a;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM", sans-serif;
+}
+/* 
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+} */
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: white;
+  /* background-color: var(--softBg); */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* 
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+} */
+
+.fancy {
+  background-color: var(--softBg);
+}
+
+.soft {
+  background-color: var(--fancyBg);
+}
+
+.dark {
+  background-color: var(--darkBg);
+}
+
+.container {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--textColor);
+}
+
+.wrapper {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+@media screen and (max-width: 1536px) {
+  .wrapper {
+    max-width: 1366px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    max-width: 1024px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    max-width: 768px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 640px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .wrapper {
+    max-width: 475px;
+  }
+}

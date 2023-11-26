@@ -1,7 +1,7 @@
-import "./footer.scss";
+import "./footer.module.css";
 
 const Footer = () => {
-  return <div className="container">Copyright Notice Privacy Policy Cool</div>;
+  return <div className="footer">Copyright Notice Privacy Policy Cool</div>;
 };
 
 export default Footer;

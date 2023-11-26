@@ -1,0 +1,9 @@
+.text{
+    display: flex;justify-content: center;align-items: center;
+}
+.io{
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
