@@ -42,12 +42,14 @@ const Register = () => {
         <input
           type="text"
           placeholder="Username"
+          autoComplete="username"
           required
           className={styles.input}
         />
         <input
-          type="text"
+          type="email"
           placeholder="Email"
+          autoComplete="new-password"
           required
           className={styles.input}
         />
