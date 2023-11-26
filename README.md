@@ -8,7 +8,13 @@ https://www.prisma.io/docs/concepts/database-connectors/mongodb
 
 import { NextResponse } from "next/server";
 
-stale-while-revalidate重新验证时失效
+stale-while-revalidate
+cache fetch updateNewData
+
+added components from lama
+../next-blog-completed/src/components/featured ../next-blog-completed/src/components/categoryList ../next-blog-completed/src/components/cardList ../next-blog-completed/src/components/Menu
+import MenuPosts from "../menuPosts/MenuPosts";
+
 
 How are parameters sent in an HTTP POST request?
 Jan 27, 2013 — Short answer: in POST requests, values are sent in the "body" of the request. With web-forms they are most likely sent with a media type of ...
@@ -20,6 +26,9 @@ it is also the name of url child object
 Dynamic Routes are pages that allow you to add custom params to your URLs. Start creating Dynamic Routes and learn more here ... { slug: ['a', 'b', 'c'] }. Next ...
 
 where:{cat,{catSlug:cat}} It's opposite to prisma model!
+
+Credentials | NextAuth.js
+https://next-auth.js.org/providers/credentials
 
 
 
