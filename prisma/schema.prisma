@@ -56,9 +56,9 @@ model Category {
 }
 
 model VerificationToken {
-    identifier String   @id @map("_id")
+    identifier String   @id @default(cuid()) @map("_id")
     token      String   @unique
-    expires    DateTime
+    expires    DateTime?
 
     @@unique([identifier, token])
 }

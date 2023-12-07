@@ -2,13 +2,7 @@ import jwt from "jsonwebtoken";
 import { NextResponse } from "next/server";
 
 export const generateAccessToken = (user) => {
-  return jwt.sign(
-    { id: user.id, isAdmin: user.isAdmin },
-    process.env.ACCESS_TOKEN_KEY,
-    {
-      expiresIn: "5s",
-    }
-  );
+  return jwt.sign({ id: user.id }, process.env.ACCESS_TOKEN_KEY);
 };
 
 export const generateRefreshToken = (user) => {

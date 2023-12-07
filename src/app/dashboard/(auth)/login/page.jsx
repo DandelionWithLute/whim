@@ -25,14 +25,23 @@ const Login = ({ url }) => {
     router?.push("/dashboard");
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
+    
+    // const user = await res.data
 
-    signIn("credentials", {
-      email,
-      password,
+    await fetch("http://localhost:3000/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // authorization: "Bearer " + user.accessToken
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
     });
   };
 

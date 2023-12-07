@@ -30,7 +30,17 @@ where:{cat,{catSlug:cat}} It's opposite to prisma model!
 Credentials | NextAuth.js
 https://next-auth.js.org/providers/credentials
 
+console.log(Date.now())
+const now = Date.now()
+console.log(typeof(now))
+console.log(Math.floor(now/1000))
 
+console.log(new Date().getFullYear());
+console.log(new Date().getMonth());
+console.log(new Date().getDate());
+console.log(new Date().getHours());
+console.log(new Date().getMinutes());
+console.log(new Date().getSeconds());
 
 install next-auth instead of next-auth/react
 since next-auth/react is another package

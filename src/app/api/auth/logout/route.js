@@ -1,12 +1,11 @@
+import { NextResponse } from "next/server";
+import prisma from "@/utils/connect";
 
-app.post("/api/logout", verify, (req, res) => {
-    const refreshToken = req.body.token;
-    refreshTokens = refreshTokens.filter((token) => token !== refreshToken);
-    res.status(200).json("You logged out successfully.");
-  });
-
-
-export const POST = async (req,res) => {
-    const refreshToken = req.body.token;
-    prisma.VerificationToken.de
-}
+export const POST = async (req, res) => {
+  if (!verify){
+    return new NextResponse(JSON.stringify("Not verified !"))
+  }
+  const refreshToken = req.body.token;
+  await prisma.VerificationToken.delete({ where: { token: refreshToken } });
+  return new NextResponse(JSON.stringify("You logged out successfully."));
+};

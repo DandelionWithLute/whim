@@ -7,16 +7,18 @@ import { NextResponse } from "next/server";
 // let refreshTokens = [];
 
 export const POST = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password } = await req.json();
+  console.log(email, password);
 
   const user = await prisma.user.findUnique({
     where: {
-      email,
-    },
+      email: email,
+    }
   });
 
   const isPasswordCorrect = await bcrypt.compare(password, user.hashedPassword);
-
+  // console.log(isPasswordCorrect)
+  // console.log(user)
   if (isPasswordCorrect) {
     //Generate an access token
     const accessToken = generateAccessToken(user);
@@ -27,13 +29,19 @@ export const POST = async (req, res) => {
         token: refreshToken,
       },
     });
-    res.json({
-      name: user.name,
-      isAdmin: user.isAdmin,
-      accessToken,
-      refreshToken,
-    });
-    return new NextResponse(JSON.stringify("Login success!", { status: 200 }));
+
+    return new NextResponse(
+      JSON.stringify(
+        {
+          name: user.name,
+          isAdmin: user.isAdmin,
+          accessToken,
+          refreshToken,
+          message: "Login success!",
+        },
+        { status: 200 }
+      )
+    );
     // status 200?
   } else {
     return new NextResponse(JSON.stringify("Email or password incorrect!"), {

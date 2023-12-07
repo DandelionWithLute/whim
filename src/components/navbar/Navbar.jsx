@@ -44,8 +44,8 @@ const Navbar = () => {
           <BiLogoTiktok />
         </a>
       </div>
-      <a className={styles.log}>
-        <LogButton />
+      <a className={styles.log} href="/dashboard/login">
+        {/* <LogButton /> */}Login Here
       </a>
     </div>
   );
