@@ -29,7 +29,7 @@ const Login = ({ url }) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
-    
+
     // const user = await res.data
 
     await fetch("http://localhost:3000/api/auth/login", {
@@ -43,6 +43,14 @@ const Login = ({ url }) => {
         password,
       }),
     });
+
+    // const res = await fetch("http://localhost:3000/api/auth/login");
+
+    // const data = res.json()
+    // if (res.ok) {
+    //   console.log(data);
+    // }
+    // const data = res.body;
   };
 
   return (

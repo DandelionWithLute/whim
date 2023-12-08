@@ -56,11 +56,17 @@ model Category {
 }
 
 model VerificationToken {
-    identifier String   @id @default(cuid()) @map("_id")
-    token      String   @unique
+    identifier String    @id @default(cuid()) @map("_id")
+    token      String    @unique
     expires    DateTime?
 
     @@unique([identifier, token])
+}
+
+model JwtToken {
+    id       String    @id @default(cuid()) @map("_id")
+    jwtToken String    @unique
+    expires  DateTime?
 }
 
 model Post {

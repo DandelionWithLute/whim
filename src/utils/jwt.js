@@ -6,10 +6,7 @@ export const generateAccessToken = (user) => {
 };
 
 export const generateRefreshToken = (user) => {
-  return jwt.sign(
-    { id: user.id, isAdmin: user.isAdmin },
-    process.env.REFRESH_TOKEN_KEY
-  );
+  return jwt.sign({ id: user.id }, process.env.REFRESH_TOKEN_KEY);
 };
 
 export const verify = (req, res, next) => {
@@ -19,17 +16,17 @@ export const verify = (req, res, next) => {
 
     jwt.verify(token, process.env.ACCESS_TOKEN_KEY, (err, user) => {
       if (err) {
-        return new NextResponse(
-          JSON.stringify("Token is not valid!", { status: 403 })
-        );
+        return new NextResponse(JSON.stringify("Token is not valid!"), {
+          status: 403,
+        });
       }
 
       req.user = user;
       next();
     });
   } else {
-    return new NextResponse(
-      JSON.stringify("You are not authenticated!", { status: 401 })
-    );
+    return new NextResponse(JSON.stringify("You are not authenticated!"), {
+      status: 401,
+    });
   }
 };
