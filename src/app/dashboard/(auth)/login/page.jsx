@@ -32,7 +32,7 @@ const Login = ({ url }) => {
 
     // const user = await res.data
 
-    await fetch("http://localhost:3000/api/auth/login", {
+    const res = await fetch("http://localhost:3000/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,6 +43,9 @@ const Login = ({ url }) => {
         password,
       }),
     });
+
+    const data = await res.json();
+    console.log(data.name + " loginpage");
 
     // const res = await fetch("http://localhost:3000/api/auth/login");
 
