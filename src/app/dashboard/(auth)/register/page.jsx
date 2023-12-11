@@ -3,11 +3,17 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const Register = () => {
   const [error, setError] = useState(null);
 
   const router = useRouter();
+  // router.back()
+  // router.push("/dashboard")
+  console.log(router);
+  const session = useSession();
+  console.log(session);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +33,8 @@ const Register = () => {
           password,
         }),
       });
-      res.status === 201 && router.push("/dashboard/login?success=Account has been created");
+      res.status === 201 &&
+        router.push("/dashboard/login?success=Account has been created");
     } catch (err) {
       setError(err);
       console.log(err);

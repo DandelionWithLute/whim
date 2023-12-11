@@ -46,6 +46,10 @@ const Login = ({ url }) => {
 
     const data = await res.json();
     console.log(data.name + " loginpage");
+    const { name, accessToken, refreshToken } = data;
+    localStorage.setItem("name", `${name}`);
+    localStorage.setItem("accessToken", `${accessToken}`);
+    localStorage.setItem("refreshToken", `${refreshToken}`);
 
     // const res = await fetch("http://localhost:3000/api/auth/login");
 
