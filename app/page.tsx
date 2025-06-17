@@ -21,7 +21,6 @@ export default function Home() {
                 它不仅仅是一个简单的文字处理器，更是一位全能的智能助理， <br />
                 助您轻松驾驭各种文体，创作出引人入胜的优质内容。
               </div>
-
               <ul>
                 <li className="flex items-center">· 内容创作者： 博客作者、社交媒体运营者、文案撰稿人，助您源源不断地产出高质量内容。</li>
                 <li className="flex items-center">· 市场营销人员： 广告语、推广文案、产品描述，让您的营销信息更具吸引力。</li>
@@ -29,6 +28,10 @@ export default function Home() {
                 <li className="flex items-center">· 职场人士： 邮件、报告、演示文稿，让您的职场沟通更加专业高效。</li>
                 <li className="flex items-center">· 以及每一个热爱文字、渴望高效表达的您！</li>
               </ul>
+              <br />
+              写作大师，让写作不再是负担，而是一场充满乐趣的探索。
+              <br />
+              立即体验，开启您的智能写作新时代！ 想了解更多关于写作大师的功能或开始免费试用吗？
             </div>
           </div>
           <div className="h-24"></div>
