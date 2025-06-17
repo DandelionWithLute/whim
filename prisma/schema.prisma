@@ -12,18 +12,20 @@ datasource db {
 }
 
 model User {
-  id             Int    @id @default(autoincrement())
+  id             Int      @id @default(autoincrement())
+  createdAt      DateTime @default(now())
   name           String
-  email          String @unique
+  email          String   @unique
   hashedPassword String
   posts          Post[]
 }
 
 model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
+  id        String      @id @default(cuid())
+  createdAt DateTime @default(now())
+  title     String?
   content   String?
-  published Boolean @default(false)
-  author    User    @relation(fields: [authorId], references: [id])
+  published Boolean  @default(false)
+  author    User     @relation(fields: [authorId], references: [id])
   authorId  Int
 }
