@@ -14,7 +14,7 @@ const Header = () => {
   const [avatarDropDown, setAvatarDropDown] = useState(false);
 
   return (
-    <div className="w-full h-12 bg-amber-50 flex items-center shadow-md absolute top-0">
+    <div className="w-full h-12 bg-amber-50 flex items-center shadow-md absolute top-0 z-50">
       <div className="w-24"></div>
       <div
         className="absolute left-24 text-2xl flex gap-3 items-center font-bold select-none cursor-pointer"
@@ -67,6 +67,15 @@ const Header = () => {
                 router.push("/register");
               }}>
               注册
+            </div>
+          )}
+          {status == "authenticated" && (
+            <div
+              className="p-1.5 hover:bg-amber-100 active:bg-amber-300 rounded-md select-none cursor-pointer"
+              onClick={() => {
+               router.push("/main")
+              }}>
+              主页
             </div>
           )}
           {status == "authenticated" && (
