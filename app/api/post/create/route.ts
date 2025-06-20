@@ -11,6 +11,7 @@ export const POST = async (req: NextRequest) => {
   const stringSchema = z.string().nullish();
   const title = stringSchema.parse(body.title);
   const content = stringSchema.parse(body.content);
+  const publicity = stringSchema.parse(body.publicity);
   //   return console.log(title, content);
 
   const findMe = await prisma.user.findUnique({
@@ -27,6 +28,7 @@ export const POST = async (req: NextRequest) => {
       authorId: findMe.id,
       content: content ?? "",
       title: title ?? "",
+      published: publicity == "public" ? true : false,
     },
   });
 

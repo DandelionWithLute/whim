@@ -1,8 +1,9 @@
 "use client";
 import Header from "@/components/Header";
 import axios from "axios";
-import { Pen, PlusIcon, Trash2 } from "lucide-react";
+import { Link2Icon, Pen, PlusIcon, Trash2 } from "lucide-react";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
@@ -119,6 +120,8 @@ const page = () => {
           <div className="h-12"></div>
           {/* @ts-ignore */}
           {fetchCurrentPost.content && <div className="text-2xl font-bold">正文：</div>}
+          {/* @ts-ignore */}
+          {fetchCurrentPost.published && <Link href={"/public/" + fetchCurrentPost.id} className="text-sky-500 flex gap-3">此文章是公开文章，点击跳转公开页面<Link2Icon /></Link>}
           <div className="">
             {/* @ts-ignore */}
             {fetchCurrentPost.content}

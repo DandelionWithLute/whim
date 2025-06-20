@@ -73,6 +73,15 @@ const Header = () => {
             <div
               className="p-1.5 hover:bg-amber-100 active:bg-amber-300 rounded-md select-none cursor-pointer"
               onClick={() => {
+               router.push("/me")
+              }}>
+              我的
+            </div>
+          )}
+          {status == "authenticated" && (
+            <div
+              className="p-1.5 hover:bg-amber-100 active:bg-amber-300 rounded-md select-none cursor-pointer"
+              onClick={() => {
                router.push("/main")
               }}>
               主页

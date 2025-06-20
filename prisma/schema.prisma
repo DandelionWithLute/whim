@@ -17,11 +17,13 @@ model User {
   name           String
   email          String   @unique
   hashedPassword String
+  address        String   @default("北京朝阳区安贞5号")
+  cellphone      String   @default("12345678910")
   posts          Post[]
 }
 
 model Post {
-  id        String      @id @default(cuid())
+  id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   title     String?
   content   String?

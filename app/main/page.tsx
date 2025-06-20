@@ -17,6 +17,7 @@ const page = () => {
 
   const titleRef = useRef<HTMLInputElement>(null);
   const contentRef = useRef<HTMLTextAreaElement>(null);
+  const publicRef = useRef<HTMLSelectElement>(null);
 
   useEffect(() => {
     fetchAllMyPosts();
@@ -33,6 +34,7 @@ const page = () => {
       .post("/api/post/create", {
         title: titleRef.current?.value ?? "",
         content: contentRef.current?.value ?? "",
+        publicity: publicRef.current?.value ?? "",
       })
       .then((res) => res.data);
     if (data.id)
@@ -60,9 +62,11 @@ const page = () => {
               className="p-3 bg-white border rounded-md w-fit cursor-pointer select-none hover:scale-[105%] active:scale-[97%]">
               <PlusIcon />
             </div>
-            <div onClick={()=>{
-              toast.error("请选中下方文章以继续删除哦！")
-            }} className="p-3 bg-white border rounded-md w-fit cursor-pointer select-none hover:scale-[105%] active:scale-[97%]">
+            <div
+              onClick={() => {
+                toast.error("请选中下方文章以继续删除哦！");
+              }}
+              className="p-3 bg-white border rounded-md w-fit cursor-pointer select-none hover:scale-[105%] active:scale-[97%]">
               <Trash2 />
             </div>
             <div className="p-3 bg-white border rounded-md w-fit cursor-pointer select-none hover:scale-[105%] active:scale-[97%]">
@@ -114,6 +118,10 @@ const page = () => {
           </div>
           <textarea ref={contentRef} className="w-full p-5 border rounded-md outline-none" placeholder="开始新的写作..." />
           <div className="flex gap-3 justify-end">
+            <select ref={publicRef} className="outline-none border rounded-md p-3">
+              <option value={"public"}>发布</option>
+              <option value={"private"}>私密</option>
+            </select>
             <input ref={titleRef} className="outline-none border rounded-md p-3" placeholder="标题..." />
             <button
               onClick={() => {
